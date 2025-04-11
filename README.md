@@ -1,80 +1,68 @@
-🚕 Uber Data Analysis & Fare Prediction
-This project focuses on performing a comprehensive data analysis and building a predictive model for Uber fare prices. Using real-world Uber trip data, we explore factors influencing fare variability and apply machine learning models to predict ride costs accurately.
+# 🚕 Uber Data Analysis & Fare Prediction
 
-📊 Project Overview
+This project focuses on performing a comprehensive **data analysis** and building a **predictive model** for Uber fare prices. Using real-world Uber trip data, we explore factors influencing fare variability and apply machine learning models to predict ride costs accurately.
+
+## 📊 Project Overview
+
 Ride-sharing services like Uber revolutionize transportation with dynamic pricing strategies. Our study investigates:
 
-Fare variability over time and location
+- Fare variability over time and location  
+- Key features impacting price (e.g., distance, day, time, surge pricing, weather)  
+- Predictive modeling using **Regression** and **Random Forest**
 
-Key features impacting price (e.g., distance, day, time, surge pricing, weather)
+## 📁 Dataset
 
-Predictive modeling using Regression and Random Forest
+- **Source**: Kaggle  
+- **Format**: `.csv`  
+- **Shape**: 1155 rows × 7 columns  
+- **Attributes**: Start Time, End Time, Locations, Distance, Fare, etc.
 
-📁 Dataset
-Source: Kaggle
+## 🔧 Data Preprocessing
 
-Format: .csv
+- Removed duplicates and handled missing values  
+- Feature engineering (added `Month`, `Day`, `Weekend_Or_Not`, `Week Day`, time-based labels)  
+- Outlier detection and removal  
+- Label encoding and scaling using **Standard Scaler**
 
-Shape: 1155 rows × 7 columns
+## 🧠 Models Used
 
-Attributes: Start Time, End Time, Locations, Distance, Fare, etc.
+- **Linear Regression**  
+- **Random Forest Regressor**  
+- Comparison based on:
+  - MAE (Mean Absolute Error)  
+  - RMSE (Root Mean Squared Error)  
+  - R² Score
 
-🔧 Data Preprocessing
-Removed duplicates and handled missing values
+## 📈 Key Insights
 
-Feature engineering (added Month, Day, Weekend_Or_Not, Week Day, time-based labels)
+- Fare is heavily influenced by:
+  - Distance traveled  
+  - Time of day  
+  - Day of the week  
+  - Weather conditions  
+  - Surge pricing  
+- **Random Forest** performed better in most scenarios with higher accuracy.
 
-Outlier detection and removal
+## 🛠️ Implementation Highlights
 
-Label encoding and scaling with Standard Scaler
+- Extracted geocoordinates using **MapQuest API**  
+- Routes plotted using **OpenRouteService**  
+- Applied **Recursive Feature Elimination (RFE)** for feature selection  
+- Created a fare prediction function that accepts:
+  - Start date  
+  - Location A to B  
+  - Distance (miles)  
+  - Time  
+  - Returns predicted **fare**
 
-🧠 Models Used
-Linear Regression
+## 📌 Results
 
-Random Forest Regressor
+- Developed a reliable fare prediction model  
+- Delivered insights useful for **Uber** and **its users**  
+- Model can be generalized for other ride-sharing platforms
 
-Comparison based on:
+## 📚 Tools & Libraries
 
-MAE (Mean Absolute Error)
-
-RMSE (Root Mean Squared Error)
-
-R² Score
-
-📈 Key Insights
-Fare is heavily influenced by:
-
-Distance traveled
-
-Time of day
-
-Day of the week
-
-Weather conditions
-
-Surge pricing
-
-Random Forest performed better in most scenarios with higher accuracy.
-
-🛠️ Implementation Highlights
-Extracted geocoordinates using MapQuest API
-
-Routes plotted using OpenRouteService
-
-Applied Recursive Feature Elimination (RFE) for feature selection
-
-Fare prediction function created to take input features and return estimated price
-
-📌 Results
-Created a reliable fare prediction model
-
-Delivered insights useful for both Uber and its users
-
-Model can be generalized for other ride-sharing platforms
-
-📚 Tools & Libraries
-Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)
-
-Jupyter Notebook
-
-APIs: MapQuest, OpenRouteService
+- Python: `Pandas`, `NumPy`, `Scikit-learn`, `Matplotlib`, `Seaborn`  
+- Jupyter Notebook  
+- APIs: **MapQuest**, **OpenRouteService**
